@@ -6,6 +6,13 @@
   </head>
   <body> 
     <div class="container">
+      <h1>Welcome to Fwitter</h1>
+      <% if signed_in? %>
+        <p><%=current_user.name %> | <a href="/sign-out">SIGN OUT</a></p>
+      <% elsif !@signin_page %>
+        <a href="/users">Sign In</a>
+      <% end %>
+      
 
       <%= yield %>
 
